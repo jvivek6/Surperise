@@ -29,7 +29,7 @@ wrapper.appendChild(video);
 yesBtn.addEventListener("click", () => {
     question.innerHTML = `
     <span style="color: white; font-size: 32px; font-weight: bold;">
-        Oops Sorry, you didn't have the "No" option 😔🌻
+        Oops Sorry, you didn't have a "No" option 🌻
     </span>`;
 
     video.style.display = "block"; // Show video
