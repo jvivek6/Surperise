@@ -15,7 +15,7 @@ video.src = "/Video/Vee.video.mp4";
 // Replace with your video URL
 video.style.display = "none"; // Hide video initially
 video.controls = true; // Show controls
-video.playsInline = true;git 
+video.playsInline = true;
 video.loop = true; // Loop the video
 video.muted = true; // Required for autoplay in some browsers
 video.style.width = "100%"; // Set width to fill container
