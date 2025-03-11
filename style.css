@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('https://images.squarespace-cdn.com/content/v1/582919efe4fcb5051942f8fe/1719555717914-DDCTZ0PQSDJ4Z79M7OBA/IMG_3172+.jpg') 
+    background: url('https://thumbs.dreamstime.com/b/sunny-sky-12286573.jpg') 
                 no-repeat center center/cover;
     color: #333;
     overflow: hidden;
@@ -60,7 +60,7 @@ body * {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.image {
+.video {
     max-width: 350px; /* Limits maximum width */
     width: 100%; /* Makes it responsive */
     max-height: 500px; /* Limits maximum height */

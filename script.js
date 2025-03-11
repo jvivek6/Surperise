@@ -1,36 +1,49 @@
 const yesBtn = document.querySelector(".yes-btn");
 const noBtn = document.querySelector(".no-btn");
 const question = document.querySelector(".question");
-const body = document.body;
+const wrapper = document.querySelector(".wrapper");
 
-// Create an image dynamically & set attributes
-// Create image element
-const img = document.createElement("img");
-img.classList.add("image");
-img.src = "https://i.ibb.co/VW474FJH/6149693720019191186.jpg"; // ✅ Direct link
+// Check if wrapper exists
+if (!wrapper) {
+    console.error("Wrapper not found!");
+}
 
-// Append the image inside the wrapper but keep it hidden initially
-img.style.display = "none";
-document.querySelector(".wrapper").appendChild(img); // ✅ Append only once
+// Create video element dynamically
+const video = document.createElement("video");
+video.classList.add("video");
+video.src = "video/Vee.video.mp4"; // Replace with your video URL
+video.style.display = "none"; // Hide video initially
+video.controls = true; // Show controls
+video.autoplay = false; // Set autoplay if needed
+video.loop = true; // Loop the video
+video.muted = true; // Required for autoplay in some browsers
+video.style.width = "100%"; // Set width to fill container
+video.style.maxWidth = "400px"; // Limit max size
+video.style.borderRadius = "10px"; // Rounded corners
 
-// When "Yes" button is clicked
+// Append the video inside the wrapper
+wrapper.appendChild(video);
+
+// "Yes" button click event
 yesBtn.addEventListener("click", () => {
     question.innerHTML = `
     <span style="color: white; font-size: 32px; font-weight: bold;">
-  Opps Sorry, you didn't have the "No" option 😔🌻
-</span>
+        Oops Sorry, you didn't have the "No" option 😔🌻
+    </span>`;
 
-    
-`;
+    video.style.display = "block"; // Show video
+    video.play(); // Play video when shown
 
-    
-    img.style.display = "block"; // ✅ Show image with correct size
-    document.querySelector(".gif").style.display = "none"; // Hide GIF
+    // Hide GIF if it exists
+    const gif = document.querySelector(".gif");
+    if (gif) {
+        gif.style.display = "none";
+    }
+
     noBtn.style.display = "none"; // Hide "No" button
 
     startFallingSunflowers(); // Start animation
 });
-
 
 // 🌻 Sunflower Falling Effect
 function startFallingSunflowers() {
@@ -64,11 +77,10 @@ function createSunflower() {
 
 // 🚀 Move "No" Button Randomly
 noBtn.addEventListener("mouseover", () => {
-    const wrapper = document.querySelector(".wrapper");
     const wrapperRect = wrapper.getBoundingClientRect();
     const noBtnRect = noBtn.getBoundingClientRect();
 
-    // Ensure the "No" button stays inside wrapper
+    // Ensure "No" button stays inside wrapper
     const maxX = wrapperRect.width - noBtnRect.width - 10;
     const maxY = wrapperRect.height - noBtnRect.height - 10;
 
