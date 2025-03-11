@@ -11,7 +11,7 @@ if (!wrapper) {
 // Create video element dynamically
 const video = document.createElement("video");
 video.classList.add("video");
-video.src = "/Video/Vee.video.mp4"; 
+video.src = "Video/Vee.video.mp4"; 
 // Replace with your video URL
 video.style.display = "none"; // Hide video initially
 video.controls = true; // Show controls
